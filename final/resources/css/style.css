@@ -166,24 +166,34 @@ main {}
 */
 
 section {
-    position: relative;
-    margin: 0 auto 0 auto;
-    width: 95%;
+    margin: 1%;
+}
+
+section.container {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: stretch;
 }
 
 article {
     background-color: white;
     padding: 0.8em;
-    border-color: #dadada;
-    border-style: solid;
-    border-radius: 4px;
-    border-width: thin;
-    margin: 0;
-    margin: 1em 0 1em 0;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+    margin: 1%;
+}
+
+article.item {
+    flex-grow: 1;
+    width: 300px;
+    flex: 1;
 }
 
 footer {
+    background-color: #484848;
+    color: #888;
     padding: 20px;
-    border-top: solid darkslategrey 2px;
     text-align: center
 }

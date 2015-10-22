@@ -5,6 +5,7 @@
     <link type="text/css" rel="stylesheet" href="resources/css/style.css">
     <meta charset="utf-8">
 
+    <!--
     <script>
         var pages = document.querySelectorAll("#bilder li");
         var current = 0;
@@ -38,20 +39,22 @@
             displayImage(old, current);
         }
     </script>
+-->
+
 </head>
 
-<body onLoad="pageLoaded()">
+<body>
 
     <nav>
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="products.html">News</a></li>
-            <li><a href="about.html">Unternehmen <span class="caret"></span></a></li>
-            <li><a href="help.html">Kontakt</a></li>
+            <li><a id="home-link" href="home.html" target="_blank">Home</a></li>
+            <li><a id="news-link" href="news.html" target="_blank">News</a></li>
+            <li><a id="company-link" href="company.html" target="_blank">Unternehmen</a></li>
+            <li><a id="contact-link" href="contact.html" target="_blank">Kontakt</a></li>
         </ul>
     </nav>
 
-    <main>
+    <main id="main-container">
 
         <!--
         <div id="slideshow">
@@ -76,20 +79,25 @@
 -->
 
         <div id="bild">
-            <img src="resources/img/slideshow/beispielbild1.jpg" width="100%">
+            <img src="resources/img/slideshow/beispielbild2.jpg" width="100%">
         </div>
 
-        <section>
+        <section class="container">
 
-            <article>
+            <article class="item">
                 <h1>WWF</h1>
                 <p>The World Wide Fund for Nature (WWF) is....</p>
             </article>
 
-            <article>
+            <article class="item">
                 <h1>News</h1>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
+            </article>
+
+            <article class="item">
+                <h1>Hallo Welt!</h1>
+                <p>Bli bla blub blub blub</p>
             </article>
 
         </section>
@@ -99,6 +107,8 @@
     <footer>
         Impressum etc.
     </footer>
+
+    <script type="text/javascript" src="resources/js/ajax.js"></script>
 </body>
 
 </html>
