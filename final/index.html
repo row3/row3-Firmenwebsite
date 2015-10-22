@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <meta charset="utf-8">
+
+    <script>
+        var pages = document.querySelectorAll("#slideshow li");
+        var current = 0;
+
+        function pageLoaded() {
+            pages = document.querySelectorAll("#slideshow li");
+            displayImage(-1, 0);
+        }
+
+        function displayImage(old, current) {
+            if (old >= 0)
+                pages[old].style.visibility = "hidden";
+            pages[current].style.visibility = "visible";
+        }
+
+        function previousImage() {
+            var old = current;
+            if (current <= 0)
+                current = pages.length - 1;
+            else
+                current = current - 1;
+            displayImage(old, current);
+        }
+
+        function nextImage() {
+            var old = current;
+            if (current >= pages.length - 1)
+                current = 0;
+            else
+                current = current + 1;
+            displayImage(old, current);
+        }
+    </script>
+</head>
+
+<body onLoad="pageLoaded()">
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">News</a></li>
+            <li><a href="about.html">Unternehmen</a></li>
+            <li><a href="help.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div id="slideshow">
+
+        <div id="bilder">
+            <ul>
+                <li><img id="Bild1" src="resources/img/WebsiteCommune2.png" width="100%" /></li>
+                <li><img id="Bild2" src="resources/img/TechDay2.png" width="100%" /></li>
+            </ul>
+
+        </div>
+        <div id="buttons">
+            <p>
+                <span class="button prevButton" onClick="previousImage()">Zurück</span>
+                <span class="button nextButton" onClick="nextImage()">Weiter</span>
+            </p>
+        </div>
+
+    </div>
+
+    <main>
+
+        <article>
+            <h1>WWF</h1>
+            <p>The World Wide Fund for Nature (WWF) is....</p>
+        </article>
+
+        <article>
+            <h1>News</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </article>
+
+    </main>
+
+    <footer>
+        Impressum etc.
+    </footer>
+</body>
+
+</html>
