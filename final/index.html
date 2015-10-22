@@ -6,11 +6,11 @@
     <meta charset="utf-8">
 
     <script>
-        var pages = document.querySelectorAll("#slideshow li");
+        var pages = document.querySelectorAll("#bilder li");
         var current = 0;
 
         function pageLoaded() {
-            pages = document.querySelectorAll("#slideshow li");
+            pages = document.querySelectorAll("#bilder li");
             displayImage(-1, 0);
         }
 
@@ -46,41 +46,53 @@
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="products.html">News</a></li>
-            <li><a href="about.html">Unternehmen</a></li>
+            <li><a href="about.html">Unternehmen <span class="caret"></span></a></li>
             <li><a href="help.html">Kontakt</a></li>
         </ul>
     </nav>
 
-    <div id="slideshow">
-
-        <div id="bilder">
-            <ul>
-                <li><img id="Bild1" src="resources/img/WebsiteCommune2.png" width="100%" /></li>
-                <li><img id="Bild2" src="resources/img/TechDay2.png" width="100%" /></li>
-            </ul>
-
-        </div>
-        <div id="buttons">
-            <p>
-                <span class="button prevButton" onClick="previousImage()">Zurück</span>
-                <span class="button nextButton" onClick="nextImage()">Weiter</span>
-            </p>
-        </div>
-
-    </div>
-
     <main>
 
-        <article>
-            <h1>WWF</h1>
-            <p>The World Wide Fund for Nature (WWF) is....</p>
-        </article>
+        <!--
+        <div id="slideshow">
 
-        <article>
-            <h1>News</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-        </article>
+            <div id="bilder">
+                <ul>
+                    <li><img id="Bild1" src="resources/img/slideshow/beispielbild1.jpg" width="100%" /></li>
+                    <li><img id="Bild2" src="resources/img/slideshow/beispielbild2.jpg" width="100%" /></li>
+                </ul>
+            </div>
+
+            
+            <div id="prev" class="button">
+                <span class="prevButton" onClick="previousImage()"></span>
+            </div>
+
+            <div id="next" class="button">
+                <span class="nextButton" onClick="nextImage()"></span>
+            </div>
+
+        </div>
+-->
+
+        <div id="bild">
+            <img src="resources/img/slideshow/beispielbild1.jpg" width="100%">
+        </div>
+
+        <section>
+
+            <article>
+                <h1>WWF</h1>
+                <p>The World Wide Fund for Nature (WWF) is....</p>
+            </article>
+
+            <article>
+                <h1>News</h1>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+            </article>
+
+        </section>
 
     </main>
 
