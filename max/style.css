@@ -1,0 +1,69 @@
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: whitesmoke;
+    color: darkslategrey
+}
+
+.header {
+    background-color: grey;
+    width: 100%;
+}
+
+#menu {
+    height: 58px;
+    overflow: hidden;
+}
+
+#profil {
+    /*   float: left; */
+    width: 20%;
+    height: 58px
+}
+
+article {
+    padding: 20px;
+    padding-top: 58px;
+}
+
+section {
+    padding: 20px;
+    padding-top: 58px;
+}
+
+footer {
+    padding: 20px;
+    border-top: solid darkslategrey 2px;
+    text-align: center
+}
+
+#menu > img {
+    width: auto;
+    max-height: 100%;
+}
+
+#slideshow {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+#slideshow ul {
+    padding: 0;
+    margin: 0;
+    list-style: none outside none;
+    position: relative;
+}
+
+#slideshow li {
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+}
