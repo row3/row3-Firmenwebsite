@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <script src="script.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#m_homeneu").click(function () {
+                $("#main").animate({
+                    opacity: "0",
+                    filter: "alpha(opacity=0)"
+                }, 400, function () {
+                    $("#main").load("homeneu.html", function () {
+                        $("#main").animate({
+                            opacity: "1",
+                            filter: "alpha(opacity=100)"
+                        }, 400);
+
+                    });
+                });
+            });
+            $("#m_newsneu").click(function () {
+                $("#main").animate({
+                    opacity: "0",
+                    filter: "alpha(opacity=0)"
+                }, 400, function () {
+                    $("#main").load("newsneu.html", function () {
+                        $("#main").animate({
+                            opacity: "1",
+                            filter: "alpha(opacity=100)"
+                        }, 400);
+
+                    });
+                });
+            });
+            $("#m_kontaktneu").click(function () {
+                $("#main").animate({
+                    opacity: "0",
+                    filter: "alpha(opacity=0)"
+                }, 400, function () {
+                    $("#main").load("kontaktneu.html", function () {
+                        $("#main").animate({
+                            opacity: "1",
+                            filter: "alpha(opacity=100)"
+                        }, 400);
+
+                    });
+                });
+            });
+            $("#m_unternehmenneu").click(function () {
+                $("#main").animate({
+                    opacity: "0",
+                    filter: "alpha(opacity=0)"
+                }, 400, function () {
+                    $("#main").load("unternehmenneu.html", function () {
+                        $("#main").animate({
+                            opacity: "1",
+                            filter: "alpha(opacity=100)"
+                        }, 400);
+
+                    });
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <header>
+        <section id="menu">
+
+            <a href="#!/homeneu" id="m_homeneu">Home</a>
+            <a href="#!/unternehmenneu" id="m_unternehmenneu">Unternehmen</a>
+            <a href="#!/kontaktneu" id="m_kontaktneu">Kontakt</a>
+            <a href="#!/newsneu" id="m_newsneu">News</a>
+        </section>
+    </header>
+
+    <br>
+    <br/>
+
+
+    <div class=header id="menu">
+
+        <img id=logo src="static/img/Bild1.png">
+    </div>
+    <div class=header id=profil>
+
+    </div>
+    <div id=content>
+
+
+        <section id="main">
+            <h1> Home </h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+
+
+    </div>
+    </section>
+    <div class=footer>
+        <p>Impressum etc.</p>
+    </div>
+    </body>
+
+
+</html>
