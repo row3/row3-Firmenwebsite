@@ -65,28 +65,34 @@ function getPage(link_url) {
     XMLHttp = new XMLHttpRequest();
 
     // Set the request type, URL and disable asynchronous mode,
-    // as we don't care about the script hanging waiting for the reply.
-    XMLHttp.open("GET", link_url, false);
+    XMLHttp.open("GET", link_url, true);
 
     // Send the request to the server.
     XMLHttp.send();
 
-    // The response we receive is not in XML format. So we cannot 
-    // use the DOM to extract what we need directly.
-    // Thus we assign it to a new element first.
-    var dom_response_holder = document.createElement('main');
 
-    // Remember to use 'responseText' instead of 'response', as this won't work in IE.
-    dom_response_holder.innerHTML = XMLHttp.responseText;
+    // Wait for request
+    XMLHttp.onreadystatechange = function () {
+        if (XMLHttp.readyState == 4 && XMLHttp.status == 200) {
 
-    // Now extract what we need using the DOM.
-    var new_container_element = dom_response_holder.getElementsByID("main-container");
+            // The response we receive is not in XML format. So we cannot 
+            // use the DOM to extract what we need directly.
+            // Thus we assign it to a new element first.
+            var dom_response_holder = document.createElement("MAIN");
 
-    // Replace current content.
-    document.getElementById("main-container").innerHTML = new_container_element;
+            // Remember to use 'responseText' instead of 'response', as this won't work in IE.
+            dom_response_holder.innerHTML = XMLHttp.responseText;
 
-    // Rebuild links, to ensure all links are bound correctly.
-    setupLinks();
+            // Now extract what we need using the DOM.
+            var new_container_element = dom_response_holder.getElementsByTagName("MAIN")[0].innerHTML;
+
+            // Replace current content.
+            document.getElementById("main-container").innerHTML = new_container_element;
+
+            // Rebuild links, to ensure all links are bound correctly.
+            setupLinks();
+        }
+    }
 }
 
 /*
