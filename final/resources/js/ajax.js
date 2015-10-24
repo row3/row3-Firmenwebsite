@@ -17,6 +17,8 @@ function setupLinks() {
     ajaxify_link(document.getElementById("contact-link"));
     ajaxify_link(document.getElementById("news-link"));
     ajaxify_link(document.getElementById("company-link"));
+    ajaxify_link(document.getElementById("impressum-link"));
+    ajaxify_link(document.getElementById("tutorials-link"));
 }
 
 /*
