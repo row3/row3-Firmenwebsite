@@ -191,8 +191,60 @@ article.item {
     flex: 1;
 }
 
-article.item:hover {
+section > article > h1 {
+    font-size: 2em;
+}
+
+section > article > section > article > h1 {
+    font-size: 1.2em;
+}
+
+section > article > section > article > p {
+    margin: 0.8em 0 0.8em 0;
+}
+
+button {
+    background-color: darkblue;
+    color: white;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+    margin: 1%;
+}
+
+section > article > section > article > img {
+    margin: 1em 0 1em 0;
+}
+
+
+/*article.item:hover {
     box-shadow: 4px 4px 5px 0px rgba(97, 93, 97, 1);
+}*/
+
+article > pre {
+    color: white;
+    background-color: black;
+    margin: 0.4em;
+}
+
+section > article > p {
+    margin: 0.4em 0 0.4em 0;
+}
+
+section > article > h2 {
+    margin: 0.8em 0 0.8em 0;
+}
+
+section > article > h3 {
+    margin: 0.6em 0 0.6em 0;
+}
+
+section > article#impressum {
+    flex: 1;
+}
+
+section > article#haftungsausschluss {
+    flex: 2;
 }
 
 footer {
