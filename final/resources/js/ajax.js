@@ -29,7 +29,9 @@ function setupLinks() {
 function ajaxify_link(link_element) {
 
     // Destroy any currently bound click events to this element.
-    link_element.onclick = null;
+    link_element.onclick = function () {
+        return false;
+    }
 
     // IE8
     if (!link_element.addEventListener) {
@@ -40,6 +42,9 @@ function ajaxify_link(link_element) {
 
             // Change URL within browser address bar.
             changeBrowserURL(link_element);
+
+            // Get page and replace current content.
+            getPage(link_element.href);
         }, false);
     }
 
@@ -60,13 +65,30 @@ function ajaxify_link(link_element) {
 }
 
 /*
+ * Function to modify URL within browser address bar.
+ */
+function changeBrowserURL(dom_element) {
+    // Change URL with browser address bar using the HTML5 History API.
+    if (window.location != dom_element.getAttribute("href")) {
+        if (history.pushState) {
+            // Parameters: data, page title, URL
+            history.pushState(null, null, dom_element.href);
+        }
+        // Fallback for non-supported browsers.
+        else {
+            document.location.hash = dom_element.getAttribute("href");
+        }
+    }
+}
+
+/*
  * Function to fetch page via URL.
  */
 function getPage(link_url) {
     // Get content using XMLHttpRequest object.
     XMLHttp = new XMLHttpRequest();
 
-    // Set the request type, URL and disable asynchronous mode,
+    // Set the request type, URL and enable asynchronous mode
     XMLHttp.open("GET", link_url, true);
 
     // Send the request to the server.
@@ -92,23 +114,8 @@ function getPage(link_url) {
             document.getElementById("main-container").innerHTML = new_container_element;
 
             // Rebuild links, to ensure all links are bound correctly.
-            setupLinks();
+            //setupLinks();
         }
-    }
-}
-
-/*
- * Function to modify URL within browser address bar.
- */
-function changeBrowserURL(dom_element) {
-    // Change URL with browser address bar using the HTML5 History API.
-    if (history.pushState) {
-        // Parameters: data, page title, URL
-        history.pushState(null, null, dom_element.href);
-    }
-    // Fallback for non-supported browsers.
-    else {
-        document.location.hash = dom_element.getAttribute("href");
     }
 }
 
