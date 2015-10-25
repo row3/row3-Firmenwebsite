@@ -105,6 +105,77 @@ function notifyMe() {
                 </div>
             </article>
         </section>
+        <section>
+            <article>
+                <h1> File Api </h1>
+                <section class="container">
+                    <article class="item">
+                        <h1> Beschreibung </h1>
+
+                        <p> Mit der File API gibt es eine Möglichkeit auf lokale Dateien zuzugreifen und diese in einem HTML-Dokument darzustellen. Beispielsweise lassen sich so Dateien vor einem Upload im Browserfenster anzeigen und überprüfen. Die File-API kann nur auf Dateien zugreifen die z.B. über ein Formular ausgewählt werden. </p>
+
+                        <P>
+                            Schreibgeschützte Informationen wie z.B. Name, Dateigröße, Mimetyp und Verweis auf den Dateihandle können bereitgestellt werden ohne, dass das Dokument hochgeladen werden muss.
+                        </P>
+
+                        <p>
+                            Bei der Benutzung der File-API können mehrere Methoden zum Laden einer Datei genutzt werde wie z.B. die Auswahl über Drag and Drop oder die Verwendung der Formulareingabe für die Auswahl. Die einfachste Methode dabei ist die Verwendung eines Standardelements vom Typ input type="file" (Formulareingabe). JavaScript gibt die Liste der ausgewählten File-Objekte als FileList zurück.</p>
+                        <p> Den Quelltext für die Verwendung der Formulareingabe könnt ihr hier nachlesen. </p>
+                    </article>
+                    <article class="item">
+                        <h1> Quelltext </h1>
+                        <pre>
+&lt;input type="file" id="files" name="files[]" multiple />
+&lt;output id="list">&lt;/output>
+
+&lt;script>
+function handleFileSelect(evt) 
+ {
+      var files = evt.target.files; // FileList object
+
+       // files is a FileList of File objects. List some properties.
+       var output = [];
+       for (var i = 0, f; f = files[i]; i++)  
+       {
+       output.push('&lt;li>&lt;strong>', escape(f.name),   '&lt;/strong> (', f.type || 'n/a', ') - ',
+       f.size, ' bytes, last modified: ',
+       f.lastModifiedDate.toLocaleDateString(), '&lt;/li>');
+        }
+     document.getElementById('list').innerHTML = '&lt;ul>' + output.join('') + '&lt;/ul>';
+ }
+
+  document.getElementById('files').addEventListener('change'
+handleFileSelect,false);
+&lt;/script>
+
+    </pre>
+                    </article>
+                    <article class="item">
+                        <button> Klicke auf "Durchsuchen" -> </button>
+                        <input type="file" id="files" name="files[]" multiple />
+                        <output id="list"></output>
+
+                        <script>
+                            function handleFileSelect(evt) {
+                                var files = evt.target.files; // FileList object
+
+                                // files is a FileList of File objects. List some properties.
+                                var output = [];
+                                for (var i = 0, f; f = files[i]; i++) {
+                                    output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                                        f.size, ' bytes, last modified: ',
+                                        f.lastModifiedDate.toLocaleDateString(), '</li>');
+                                }
+                                document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+                            }
+
+                            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+                        </script>
+
+                    </article>
+
+
+                </section>
     </main>
 
     <footer>
