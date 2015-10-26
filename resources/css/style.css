@@ -16,6 +16,9 @@ nav {
     display: block;
     overflow: hidden;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
 }
 
 nav ul {
@@ -79,6 +82,7 @@ nav > ul > li > div {
     position: absolute;
     width: 165px;
     visibility: hidden;
+    z-index: 99;
     -webkit-transiton: opacity 0.2s;
     -moz-transition: opacity 0.2s;
     -ms-transition: opacity 0.2s;
@@ -94,6 +98,7 @@ nav > ul > li:hover > div {
 
 nav > ul > li > div ul > li {
     display: block;
+    z-index: 99;
 }
 
 nav > ul > li > div ul > li > a {
@@ -101,69 +106,93 @@ nav > ul > li > div ul > li > a {
     display: block;
     padding: 12px 24px;
     text-decoration: none;
+    z-index: 99;
 }
 
 nav > ul > li > div ul > li:hover > a {
     background-color: rgba( 255, 255, 255, 0.1);
 }
 
-main {}
-
-
-/*
-#slideshow {
-    height: auto;
-    position: relative;
+main {
+    padding-top: 56px;
 }
 
-#slideshow > * {
-    display: flex;
+#slideshow {
+    margin: 0 auto 0 auto;
+    overflow: hidden;
 }
 
 #bilder {
-    position: absolute;
-    width: 100%;
-    height: auto;
-}
-
-#bilder > ul {
-    padding: 0;
-    margin: 0;
-    list-style: none outside none;
     position: relative;
+    z-index: -1;
 }
 
-#bilder > ul > li {
+#bilder > img {
+    visibility: hidden;
+    position: absolute;
+    z-index: inherit;
+}
+
+#slideshow > .button-area {
     position: absolute;
     visibility: hidden;
+    width: 5%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
-#slideshow > .button {
+#slideshow > #prev.button-area {
+    left: 0;
+    z-index: 2;
+}
+
+#slideshow:hover > #prev.button-area {
+    background-image: linear-gradient(to left, rgba(54, 54, 54, 0), rgba(16, 16, 16, 0.8));
+    visibility: visible;
+}
+
+#slideshow > #next.button-area {
+    right: 0;
+    z-index: 2;
+}
+
+#slideshow:hover > #next.button-area {
+    background-image: linear-gradient(to right, rgba(54, 54, 54, 0), rgba(16, 16, 16, 0.8));
+    visibility: visible;
+}
+
+#slideshow:hover > .button-area > #prevButton {
+    border-right: 1em solid #FFF;
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    z-index: 3;
     position: absolute;
+    left: 20%;
+    top: 50%;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
-#slideshow > .button > .prevButton {
-    border-right: 2.5em solid #aaa;
-    border-top: 2.5em solid transparent;
-    border-bottom: 2.5em solid transparent;
-    content: "";
-    display: inline-block;
-    height: 0;
-    width: 0;
-    vertical-align: middle;
+#slideshow:hover > .button-area > #nextButton {
+    border-left: 1em solid #FFF;
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    z-index: 3;
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
-
-#slideshow > .button > .nextButton {
-    border-left: 2.5em solid #aaa;
-    border-top: 2.5em solid transparent;
-    border-bottom: 2.5em solid transparent;
-    content: "";
-    display: inline-block;
-    height: 0;
-    width: 0;
-    vertical-align: middle;
-}
-*/
 
 section {
     margin: 1%;
@@ -188,11 +217,36 @@ article {
 article.item {
     flex-grow: 1;
     width: 300px;
-    flex: 1;
 }
+
+
+/*
+@media screen and (max-width: 768px) {
+    section.container {
+        flex-direction: column;
+    }
+}
+*/
 
 section > article > h1 {
     font-size: 2em;
+    margin: 0.3em 0 0.8em 0;
+}
+
+section > article > h2 {
+    margin: 0.8em 0 0.8em 0;
+}
+
+section > article > h3 {
+    margin: 0.6em 0 0.6em 0;
+}
+
+section > article > p {
+    margin: 0.4em 0 0.4em 0;
+}
+
+section > article li {
+    margin: 0.4em 1em 0.4em 1em;
 }
 
 section > article > section > article > h1 {
@@ -216,27 +270,10 @@ section > article > section > article > img {
     margin: 1em 0 1em 0;
 }
 
-
-/*article.item:hover {
-    box-shadow: 4px 4px 5px 0px rgba(97, 93, 97, 1);
-}*/
-
 article > pre {
     color: white;
     background-color: black;
     margin: 0.4em;
-}
-
-section > article > p {
-    margin: 0.4em 0 0.4em 0;
-}
-
-section > article > h2 {
-    margin: 0.8em 0 0.8em 0;
-}
-
-section > article > h3 {
-    margin: 0.6em 0 0.6em 0;
 }
 
 section > article#impressum {
@@ -254,11 +291,11 @@ footer {
     text-align: center
 }
 
-footer > a {
+footer a {
     color: #888;
     text-decoration: none;
 }
 
-footer > a:hover {
+footer a:hover {
     color: white;
 }
