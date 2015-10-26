@@ -51,59 +51,49 @@
         <section>
             <article>
                 <h1>Canvas - Die HTML Leinwand</h1>
-                <p>...</p>
+                <p>Canvas ist eine Möglichkeit dirket in HTML5 Formen zu zeichnen. Dazu wird eine Fläche (das Canvas) mit angegebene Höhen- und Breitenangaben erstellt.
+                    <br>In dieser Fläche werden dann per Java Script die Formen zu zeichnen. Dabei ist so gut wie alles möglich: Kreise, Rechtecke, Schriften, Bilder, Farbverläufe, Pfade, ...</p>
+                <p>Hier ist ein kleines Beispiel dafür wie man mit Canvas ein Kreis und ein Rechteck zeichnen kann:</p>
 
                 <section class="container">
                     <article class="item">
                         <h1>Quelltext</h1>
                         <pre>
-&lt;canvas id="CanvasID" width="XYpx" height="XYpx">
+&lt;canvas id="CanvasID" width="CanvasHöheInPixel" height="CanvasBreiteInPixel">
 &lt;/canvas>
 
 &lt;script>
  
         var e=document.getElementById("meinKreisCanvas");
         var canv=e.getContext("2d");
+        //Kreis
         canv.fillStyle= "darkblue";
         canv.arc(150,250,150,0,2*Math.PI);
         canv.fill();
+        //Rechteck
+        canv.fillStyle = "darkblue";
+        canv.fillRect(75, 0, 150, 150);
  
 &lt;/script>
-
-
-&lt;button onclick="notifyMe();">Kreis zeichnen&lt;/button>
                         </pre>
                     </article>
 
-                    <article class="item">
-                        <section class="container">
-                            <article class="item">
-                                <div style="text-align: center">
-                                    <button onclick="kreis();">Kreis zeichnen</button>
-                                </div>
-                            </article>
-                            <article class="item">
-                                <div style="text-align: center">
-                                    <button onclick="rechteck();">Rechteck zeichnen</button>
-                                </div>
-                            </article>
-                            <article class="item">
-                                <div style="text-align: center">
-                                    <button onclick="pfade();">Pfade zeichnen</button>
-                                </div>
-                            </article>
-                        </section>
+                    <article class="item" style="text-align: center">
+                        <div style="text-align: center; margin: 1em">
+                            <button onclick="kreis();">Kreis zeichnen</button>
+                            <button onclick="rechteck();">Rechteck zeichnen</button>
+                        </div>
 
-                        <canvas id="meinCanvas" width="516" height="500"></canvas>
+                        <canvas id="meinCanvas" width="300" height="150" style="margin: 2em 0"></canvas>
 
                         <script>
                             function kreis() {
                                 var e = document.getElementById("meinCanvas");
                                 var canv = e.getContext("2d");
                                 canv.fillStyle = "white";
-                                canv.fillRect(0, 0, 516, 500);
+                                canv.fillRect(0, 0, 300, 150);
                                 canv.fillStyle = "darkblue";
-                                canv.arc(258, 250, 150, 0, 2 * Math.PI);
+                                canv.arc(150, 75, 75, 0, 2 * Math.PI);
                                 canv.fill();
                             }
 
@@ -111,22 +101,9 @@
                                 var e = document.getElementById("meinCanvas");
                                 var canv = e.getContext("2d");
                                 canv.fillStyle = "white";
-                                canv.fillRect(0, 0, 516, 500);
+                                canv.fillRect(0, 0, 300, 150);
                                 canv.fillStyle = "darkblue";
-                                canv.fillRect(108, 100, 300, 300);
-                            }
-
-                            function pfade() {
-                                var e = document.getElementById("meinCanvas");
-                                var canv = e.getContext("2d");
-                                canv.fillStyle = "white";
-                                canv.fillRect(0, 0, 516, 500);
-                                canv.strokeStyle = "darkblue";
-                                canv.lineWidth = 10;
-                                canv.moveTo(200, 450);
-                                canv.bezierCurveTo(200, 450, 100, 350, 200, 250);
-                                //canv.bezierCurveTo(200, 250, 300, 150, 200, 50);
-                                canv.stroke();
+                                canv.fillRect(75, 0, 150, 150);
                             }
                         </script>
 
@@ -137,7 +114,7 @@
     </main>
 
     <footer>
-        <a id="impressum-link" href="impressum.html" target="_blank">Impressum</a>
+        <p>© row3 | <a href="impressum.html" target="_blank">Impressum</a></p>
     </footer>
 
     <script type="text/javascript" src="resources/js/ajax.js"></script>
