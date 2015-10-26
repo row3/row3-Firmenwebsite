@@ -284,6 +284,13 @@ section > article#haftungsausschluss {
     flex: 2;
 }
 
+section > article > p.datum {
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: right;
+    margin-bottom: 0;
+}
+
 footer {
     background-color: #484848;
     color: #888;
