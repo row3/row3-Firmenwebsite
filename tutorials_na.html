@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a id="home-link" href="index.html" target="_blank">Home</a></li>
+            <li><a id="news-link" href="news.html" target="_blank">News</a></li>
+            <li><a id="company-link" href="company.html" target="_blank">Unternehmen</a></li>
+            <li><a id="contact-link" href="contact.html" target="_blank">Kontakt</a></li>
+            <li><a id="tutorials-link" href="tutorials.html" target="_blank">Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-container">
+
+        <section>
+
+            <article>
+                <h1>Notifications API</h1>
+                <section class="container">
+                    <article class="item">
+                        <h1>Beschreibung</h1>
+                        <p>Die Notifications API ist eine Schnittstelle um den End-Nutzer über bestimmte Ereignisse bzw. Vorgänge, die ihn betreffen, zu benachrichtigen. Dafür wird der Nutzer außerhalb des Kontexts einer Webseite alarmiert. Beispiele dafür sind unter anderem der Eingang einer Email oder auch die Erinnerung an einen Termin oder an einen Geburtstag.</p>
+                        <p>Aufgerufen werden die Benachrichtigungen durch den Konstruktor Notification.Notification().</p>
+
+                        <p>Benachrichtigungen können nur angezeigt werden, wenn der Nutzer seine Erlaubnis dazu gegeben hat. Da gibt es drei Eigenschaften: default (Nichterfüllung), denied (Verweigerung) u nd granted (Genehmigung). Au ßerdem gehört der Titel und der Text der Notification, sowie die Sprache dazu. Aber auch der Körper, die ID und das URL des Bildes, welches als Symbol verwe ndet werden kann, können in einer Notification eingefügt werden. Des Weiteren kann eine strukturierte Ko pie der Daten wiedergegeben werden und es kann spezif iz iert werden, ob die Benachrichtigung leise, daher ohne Klang oder Vibration widergegeben werden soll.</p>
+
+                        <p>Mit den Methoden der Notifications API kann die die Erlaubnis des Nut zers eingeholt werden, die Benachrichtigung anzuzeigen. Es kann außerdem eingestellt werden, dass das Prog ramm ein e Benachrichtigung automatisch schließt.</p>
+
+                        <p>Der Ablauf einer Notification kann in drei Schritte unterteilt werden. Im ersten Schritt wird überprüft, ob der Browser die Notifications unterstützt. Wenn das nicht der Fall ist, gibt es eine Warnung. Im Schritt zw ei wird überprüft ob es eine gewährleistete Erlaubnis für Notifications gibt . Wenn nicht, wird der Nutzer um Erlaubnis gefragt. Sobald eine Erlaubnis vorhanden ist, kann im letzten Schritt, die Notification erstellt werden.
+                        </p>
+                    </article>
+                    <article class="item">
+                        <h1>Quelltext</h1>
+                        <pre>
+&lt;script>
+function notifyMe() {
+    // Let's check if the browser supports notifications 
+    if (!("Notification" in window)) {
+        alert("This browser does not support desktop notification");
+    }
+
+    // Let's check whether notification permissions have already been granted 
+    else if (Notification.permission === "granted") {
+        // If it's okay let's create a notification 
+        var notification = new Notification("Hi there!");
+    }
+
+    // Otherwise, we need to ask the user for permission 
+    else if (Notification.permission !== 'denied') {
+        Notification.requestPermission(function (permission) {
+            // If the user accepts, let's create a notification 
+            if (permission === "granted") {
+                var notification = new Notification("Hi there!");
+            }
+        });
+    }
+
+    // At last, if the user has denied notifications, and you  
+    // want to be respectful there is no need to bother them any more. 
+}
+&lt;/script>
+
+&lt;button onclick="notifyMe();">Demo Button&lt;/button>
+                        </pre>
+
+                        <script>
+                            function notifyMe() {
+                                // Let's check if the browser supports notifications 
+                                if (!("Notification" in window)) {
+                                    alert("This browser does not support desktop notification");
+                                }
+
+                                // Let's check whether notification permissions have already been granted 
+                                else if (Notification.permission === "granted") {
+                                    // If it's okay let's create a notification 
+                                    var notification = new Notification("Hi there!");
+                                }
+
+                                // Otherwise, we need to ask the user for permission 
+                                else if (Notification.permission !== 'denied') {
+                                    Notification.requestPermission(function (permission) {
+                                        // If the user accepts, let's create a notification 
+                                        if (permission === "granted") {
+                                            var notification = new Notification("Hi there!");
+                                        }
+                                    });
+                                }
+
+                                // At last, if the user has denied notifications, and you  
+                                // want to be respectful there is no need to bother them any more. 
+                            }
+                        </script>
+                    </article>
+                </section>
+                <div style="text-align: center">
+                    <button onclick="notifyMe();">Demo Button</button>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h1> File Api </h1>
+                <section class="container">
+                    <article class="item">
+                        <h1> Beschreibung </h1>
+
+                        <p> Mit der File API gibt es eine Möglichkeit auf lokale Dateien zuzugreifen und diese in einem HTML-Dokument darzustellen. Beispielsweise lassen sich so Dateien vor einem Upload im Browserfenster anzeigen und überprüfen. Die File-API kann nur auf Dateien zugreifen die z.B. über ein Formular ausgewählt werden. </p>
+
+                        <P>
+                            Schreibgeschützte Informationen wie z.B. Name, Dateigröße, Mimetyp und Verweis auf den Dateihandle können bereitgestellt werden ohne, dass das Dokument hochgeladen werden muss.
+                        </P>
+
+                        <p>
+                            Bei der Benutzung der File-API können mehrere Methoden zum Laden einer Datei genutzt werde wie z.B. die Auswahl über Drag and Drop oder die Verwendung der Formulareingabe für die Auswahl. Die einfachste Methode dabei ist die Verwendung eines Standardelements vom Typ input type="file" (Formulareingabe). JavaScript gibt die Liste der ausgewählten File-Objekte als FileList zurück.</p>
+                        <p> Den Quelltext für die Verwendung der Formulareingabe könnt ihr hier nachlesen. </p>
+                    </article>
+                    <article class="item">
+                        <h1> Quelltext </h1>
+                        <pre>
+&lt;input type="file" id="files" name="files[]" multiple />
+&lt;output id="list">&lt;/output>
+
+&lt;script>
+function handleFileSelect(evt) 
+ {
+      var files = evt.target.files; // FileList object
+
+       // files is a FileList of File objects. List some properties.
+       var output = [];
+       for (var i = 0, f; f = files[i]; i++)  
+       {
+       output.push('&lt;li>&lt;strong>', escape(f.name),   '&lt;/strong> (', f.type || 'n/a', ') - ',
+       f.size, ' bytes, last modified: ',
+       f.lastModifiedDate.toLocaleDateString(), '&lt;/li>');
+        }
+     document.getElementById('list').innerHTML = '&lt;ul>' + output.join('') + '&lt;/ul>';
+ }
+
+  document.getElementById('files').addEventListener('change'
+handleFileSelect,false);
+&lt;/script>
+
+    </pre>
+                    </article>
+                    <article class="item">
+                        <button> Klicke auf "Durchsuchen" -> </button>
+                        <input type="file" id="files" name="files[]" multiple />
+                        <output id="list"></output>
+
+                        <script>
+                            function handleFileSelect(evt) {
+                                var files = evt.target.files; // FileList object
+
+                                // files is a FileList of File objects. List some properties.
+                                var output = [];
+                                for (var i = 0, f; f = files[i]; i++) {
+                                    output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                                        f.size, ' bytes, last modified: ',
+                                        f.lastModifiedDate.toLocaleDateString(), '</li>');
+                                }
+                                document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+                            }
+
+                            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+                        </script>
+
+                    </article>
+
+
+                </section>
+    </main>
+
+    <footer>
+        <a id="impressum-link" href="impressum.html" target="_blank">Impressum</a>
+    </footer>
+
+    <script type="text/javascript" src="resources/js/ajax.js"></script>
+</body>
+
+</html>

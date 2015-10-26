@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <meta charset="utf-8">
+
+    <!--
+    <script>
+        var pages = document.querySelectorAll("#bilder li");
+        var current = 0;
+
+        function pageLoaded() {
+            pages = document.querySelectorAll("#bilder li");
+            displayImage(-1, 0);
+        }
+
+        function displayImage(old, current) {
+            if (old >= 0)
+                pages[old].style.visibility = "hidden";
+            pages[current].style.visibility = "visible";
+        }
+
+        function previousImage() {
+            var old = current;
+            if (current <= 0)
+                current = pages.length - 1;
+            else
+                current = current - 1;
+            displayImage(old, current);
+        }
+
+        function nextImage() {
+            var old = current;
+            if (current >= pages.length - 1)
+                current = 0;
+            else
+                current = current + 1;
+            displayImage(old, current);
+        }
+    </script>
+-->
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a id="home-link" href="index.html" target="_blank">Home</a></li>
+            <li><a id="news-link" href="news.html" target="_blank">News</a></li>
+            <li><a id="company-link" href="company.html" target="_blank">Unternehmen</a></li>
+            <li><a id="contact-link" href="contact.html" target="_blank">Kontakt</a></li>
+            <li><a id="tutorials-link" href="tutorials.html" target="_blank">Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-container">
+
+        <!--
+        <div id="slideshow">
+
+            <div id="bilder">
+                <ul>
+                    <li><img id="Bild1" src="resources/img/slideshow/beispielbild1.jpg" width="100%" /></li>
+                    <li><img id="Bild2" src="resources/img/slideshow/beispielbild2.jpg" width="100%" /></li>
+                </ul>
+            </div>
+
+
+            <div id="prev" class="button">
+                <span class="prevButton" onClick="previousImage()"></span>
+            </div>
+
+            <div id="next" class="button">
+                <span class="nextButton" onClick="nextImage()"></span>
+            </div>
+
+        </div>
+-->
+
+        <div id="bild">
+            <img src="resources/img/slideshow/beispielbild2.jpg" width="100%" style="max-height: 900px">
+        </div>
+
+        <section class="container">
+
+            <article class="item">
+                <h1>Commune³</h1>
+                <p>Ein Leben in einer Wohngemeinschaft kann anstrengend und stressig werden. Mit unserem WG-Verwaltungprogramm Commune³ fällt euch die Organisation euer WG einfacher. Verwaltet alle eure Termine, schreibt virtuelle Erinnerungen und Einkaufslisten, organisiert die anfallenden Putzaufgaben im neuen Putzplan-Tool und habt alle eure Ausgaben in der Kostenübersicht im Auge. Entdeckt jetzt Commune³ ... [mehr]</p>
+            </article>
+
+            <article class="item">
+                <h1>TechDay 2016</h1>
+                <p>Wie immer findet auch dieses Jahr wieder der TechDay in New York statt. Auch wir werden vor Ort sein, unsere neuen Produkte vorstellen und mit euch über die Zukunft der Web-Anwendungen sprechen. Ihr findet uns in Halle 2 Platz 23. Mehr Infos und einen Link für Tickets findet ihr hier ... [mehr]</p>
+            </article>
+
+            <article class="item">
+                <h1>Camera³</h1>
+                <p>Jaja wir wissen, es gibt bereits unendlich viele Fotobearbeitungsapps. Aber mit Camera³ wollen wir trotzdem noch einen draufsetzen. Seht hier wie wir uns mit unterschiedlichsten Fotographen zusammengesetzt haben, um mit ihnen zusammen die optimale Fotobearbeitungsanwendung für Jedermann zu entwickeln ... [mehr]</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <a id="impressum-link" href="impressum.html" target="_blank">Impressum</a>
+    </footer>
+
+    <script type="text/javascript" src="resources/js/ajax.js"></script>
+</body>
+
+</html>

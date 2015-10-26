@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #444444;
+}
+
+nav {
+    background-color: #363636;
+    color: #888;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+nav > ul > li > a > .caret {
+    border-top: 4px solid #aaa;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    vertical-align: middle;
+    -webkit-transition: color 0.1s linear;
+    -moz-transition: color 0.1s linear;
+    -o-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+}
+
+nav > ul > li > a {
+    color: #aaa;
+    display: block;
+    line-height: 56px;
+    padding: 0 24px;
+    text-decoration: none;
+}
+
+nav > ul > li:hover {
+    background-color: rgb( 40, 44, 47);
+}
+
+nav > ul > li:hover > a {
+    color: rgb( 255, 255, 255);
+}
+
+nav > ul > li:hover > a > .caret {
+    border-top-color: rgb( 255, 255, 255);
+}
+
+nav > ul > li > div {
+    background-color: rgb( 40, 44, 47);
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    display: none;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    width: 165px;
+    visibility: hidden;
+    -webkit-transiton: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -transition: opacity 0.2s;
+}
+
+nav > ul > li:hover > div {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav > ul > li > div ul > li {
+    display: block;
+}
+
+nav > ul > li > div ul > li > a {
+    color: #fff;
+    display: block;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+
+nav > ul > li > div ul > li:hover > a {
+    background-color: rgba( 255, 255, 255, 0.1);
+}
+
+main {}
+
+
+/*
+#slideshow {
+    height: auto;
+    position: relative;
+}
+
+#slideshow > * {
+    display: flex;
+}
+
+#bilder {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+#bilder > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none outside none;
+    position: relative;
+}
+
+#bilder > ul > li {
+    position: absolute;
+    visibility: hidden;
+}
+
+#slideshow > .button {
+    position: absolute;
+}
+
+#slideshow > .button > .prevButton {
+    border-right: 2.5em solid #aaa;
+    border-top: 2.5em solid transparent;
+    border-bottom: 2.5em solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    vertical-align: middle;
+}
+
+#slideshow > .button > .nextButton {
+    border-left: 2.5em solid #aaa;
+    border-top: 2.5em solid transparent;
+    border-bottom: 2.5em solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    vertical-align: middle;
+}
+*/
+
+section {
+    margin: 1%;
+}
+
+section.container {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: stretch;
+}
+
+article {
+    background-color: white;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+    margin: 1%;
+}
+
+article.item {
+    flex-grow: 1;
+    width: 300px;
+    flex: 1;
+}
+
+section > article > h1 {
+    font-size: 2em;
+}
+
+section > article > section > article > h1 {
+    font-size: 1.2em;
+}
+
+section > article > section > article > p {
+    margin: 0.8em 0 0.8em 0;
+}
+
+button {
+    background-color: darkblue;
+    color: white;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+    margin: 1%;
+}
+
+section > article > section > article > img {
+    margin: 1em 0 1em 0;
+}
+
+
+/*article.item:hover {
+    box-shadow: 4px 4px 5px 0px rgba(97, 93, 97, 1);
+}*/
+
+article > pre {
+    color: white;
+    background-color: black;
+    margin: 0.4em;
+}
+
+section > article > p {
+    margin: 0.4em 0 0.4em 0;
+}
+
+section > article > h2 {
+    margin: 0.8em 0 0.8em 0;
+}
+
+section > article > h3 {
+    margin: 0.6em 0 0.6em 0;
+}
+
+section > article#impressum {
+    flex: 1;
+}
+
+section > article#haftungsausschluss {
+    flex: 2;
+}
+
+footer {
+    background-color: #484848;
+    color: #888;
+    padding: 20px;
+    text-align: center
+}
+
+footer > a {
+    color: #888;
+    text-decoration: none;
+}
+
+footer > a:hover {
+    color: white;
+}
