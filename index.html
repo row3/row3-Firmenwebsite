@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="resources/js/slideshow.js"></script>
+</head>
+
+<body onresize="resize(pages[current])">
+
+    <nav>
+        <ul>
+            <li><a href="index.html" target="_blank">Home</a></li>
+            <li><a href="news.html" target="_blank">News</a></li>
+            <li>
+                <a href="tutorials.html" target="_blank">Tutorials <span class="caret"></span></a>
+                <div>
+                    <ul>
+                        <li><a href="tutorials_na.html" target="_blank">Notification API</a></li>
+                        <li><a href="index.html" target="_blank">File API</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="company.html" target="_blank">Unternehmen<span class="caret"></span></a>
+                <div>
+                    <ul>
+                        <li><a href="company.html" target="_blank">Vorstellung</a></li>
+                        <li><a href="standort.html" target="_blank">Standorte</a></li>
+                    </ul>
+                </div>
+                <li><a href="contact.html" target="_blank">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-container">
+
+        <div id="slideshow">
+
+            <div id="prev" class="button-area">
+                <span id="prevButton" onClick="previousImage()"></span>
+            </div>
+
+            <div id="next" class="button-area">
+                <span id="nextButton" onClick="nextImage()"></span>
+            </div>
+
+            <div id="bilder">
+                <img id="Bild1" src="resources/img/slideshow/beispielbild1.jpg" width="100%" />
+                <img id="Bild2" src="resources/img/slideshow/beispielbild2.jpg" width="100%" /> </div>
+        </div>
+
+        <section class="container">
+
+            <article class="item">
+                <h1>Commune³</h1>
+                <p>Ein Leben in einer Wohngemeinschaft kann anstrengend und stressig werden. Mit unserem WG-Verwaltungprogramm Commune³ fällt euch die Organisation euer WG einfacher. Verwaltet alle eure Termine, schreibt virtuelle Erinnerungen und Einkaufslisten, organisiert die anfallenden Putzaufgaben im neuen Putzplan-Tool und habt alle eure Ausgaben in der Kostenübersicht im Auge. Entdeckt jetzt Commune³ ... [mehr]</p>
+            </article>
+
+            <article class="item">
+                <h1>TechDay 2016</h1>
+                <p>Wie immer findet auch dieses Jahr wieder der TechDay in New York statt. Auch wir werden vor Ort sein, unsere neuen Produkte vorstellen und mit euch über die Zukunft der Web-Anwendungen sprechen. Ihr findet uns in Halle 2 Platz 23. Mehr Infos und einen Link für Tickets findet ihr hier ... [mehr]</p>
+            </article>
+
+            <article class="item">
+                <h1>Camera³</h1>
+                <p>Jaja wir wissen, es gibt bereits unendlich viele Fotobearbeitungsapps. Aber mit Camera³ wollen wir trotzdem noch einen draufsetzen. Seht hier wie wir uns mit unterschiedlichsten Fotographen zusammengesetzt haben, um mit ihnen zusammen die optimale Fotobearbeitungsanwendung für Jedermann zu entwickeln ... [mehr]</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© row3 | <a href="impressum.html" target="_blank">Impressum</a></p>
+    </footer>
+
+    <script type="text/javascript" src="resources/js/ajax.js"></script>
+</body>
+
+</html>

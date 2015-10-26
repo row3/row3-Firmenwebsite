@@ -1,2 +1,2 @@
 # row3-Firmenwebsite
-Die Firmenwebsite von row3.
+Das ist die Firmenwebseite des Start-ups row3.
