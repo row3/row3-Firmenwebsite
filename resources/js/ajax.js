@@ -113,6 +113,9 @@ function getPage(link_url) {
             // Replace current content.
             document.getElementById("main-container").innerHTML = new_container_element;
 
+
+            pageLoaded();
+
             // Rebuild links, to ensure all links are bound correctly.
             //setupLinks();
         }

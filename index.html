@@ -5,45 +5,10 @@
     <link type="text/css" rel="stylesheet" href="resources/css/style.css">
     <meta charset="utf-8">
 
-    <!--
-    <script>
-        var pages = document.querySelectorAll("#bilder li");
-        var current = 0;
-
-        function pageLoaded() {
-            pages = document.querySelectorAll("#bilder li");
-            displayImage(-1, 0);
-        }
-
-        function displayImage(old, current) {
-            if (old >= 0)
-                pages[old].style.visibility = "hidden";
-            pages[current].style.visibility = "visible";
-        }
-
-        function previousImage() {
-            var old = current;
-            if (current <= 0)
-                current = pages.length - 1;
-            else
-                current = current - 1;
-            displayImage(old, current);
-        }
-
-        function nextImage() {
-            var old = current;
-            if (current >= pages.length - 1)
-                current = 0;
-            else
-                current = current + 1;
-            displayImage(old, current);
-        }
-    </script>
--->
-
+    <script type="text/javascript" src="resources/js/slideshow.js"></script>
 </head>
 
-<body>
+<body onLoad="pageLoaded()" onresize="resize(pages[current])">
 
     <nav>
         <ul>
@@ -57,30 +22,19 @@
 
     <main id="main-container">
 
-        <!--
         <div id="slideshow">
 
+            <div id="prev" class="button-area">
+                <span id="prevButton" onClick="previousImage()"></span>
+            </div>
+
+            <div id="next" class="button-area">
+                <span id="nextButton" onClick="nextImage()"></span>
+            </div>
+
             <div id="bilder">
-                <ul>
-                    <li><img id="Bild1" src="resources/img/slideshow/beispielbild1.jpg" width="100%" /></li>
-                    <li><img id="Bild2" src="resources/img/slideshow/beispielbild2.jpg" width="100%" /></li>
-                </ul>
-            </div>
-
-
-            <div id="prev" class="button">
-                <span class="prevButton" onClick="previousImage()"></span>
-            </div>
-
-            <div id="next" class="button">
-                <span class="nextButton" onClick="nextImage()"></span>
-            </div>
-
-        </div>
--->
-
-        <div id="bild">
-            <img src="resources/img/slideshow/beispielbild2.jpg" width="100%" style="max-height: 900px">
+                <img id="Bild1" src="resources/img/slideshow/beispielbild1.jpg" width="100%" />
+                <img id="Bild2" src="resources/img/slideshow/beispielbild2.jpg" width="100%" /> </div>
         </div>
 
         <section class="container">
