@@ -1,18 +1,21 @@
 var pages = document.querySelectorAll("#bilder img");
 var current = 0;
+var slideshow;
 
 function resize(pic) {
-    document.getElementById('slideshow').setAttribute("style", "height:" +
-        pic.height + "px");
-    document.getElementById('prev').setAttribute("style", "height:" +
-        pic.height + "px");
-    document.getElementById('next').setAttribute("style", "height:" +
-        pic.height + "px");
+    if (document.location.pathname == "/index.html") {
+        document.getElementById('slideshow').setAttribute("style", "height:" +
+            pic.height + "px");
+        document.getElementById('prev').setAttribute("style", "height:" +
+            pic.height + "px");
+        document.getElementById('next').setAttribute("style", "height:" +
+            pic.height + "px");
+    }
 }
 
 function pageLoaded() {
     pages = document.querySelectorAll("#bilder img");
-    if (pages.length != 0) {
+    if (pages.length != 0 && document.location.pathname == "/index.html") {
         displayImage(-1, 0);
         resize(pages[current]);
         play();
@@ -21,7 +24,7 @@ function pageLoaded() {
 }
 
 function play() {
-    setTimeout(function () {
+    slideshow = setTimeout(function () {
         nextImage();
         play();
     }, 5000);

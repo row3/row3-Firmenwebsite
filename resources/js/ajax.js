@@ -5,6 +5,7 @@ var readyStateCheckInterval = self.setInterval(function () {
         // When DOM ready, destroy timer and execute setupLinks() function.
         clearInterval(readyStateCheckInterval);
         setupLinks();
+        pageLoaded();
 
         // Attach event listeners for browser history and hash changes.
         popStateHandler();
@@ -13,12 +14,11 @@ var readyStateCheckInterval = self.setInterval(function () {
 
 function setupLinks() {
     // Send our predefined link elements to ajaxify_link() function.
-    ajaxify_link(document.getElementById("home-link"));
-    ajaxify_link(document.getElementById("contact-link"));
-    ajaxify_link(document.getElementById("news-link"));
-    ajaxify_link(document.getElementById("company-link"));
-    ajaxify_link(document.getElementById("impressum-link"));
-    ajaxify_link(document.getElementById("tutorials-link"));
+    var links = document.querySelectorAll("a");
+
+    for (var i = 0; i < links.length; i++) {
+        ajaxify_link(links[i])
+    }
 }
 
 /*
@@ -114,6 +114,7 @@ function getPage(link_url) {
             document.getElementById("main-container").innerHTML = new_container_element;
 
 
+            clearTimeout(slideshow);
             pageLoaded();
 
             // Rebuild links, to ensure all links are bound correctly.
