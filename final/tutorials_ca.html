@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a id="home-link" href="index.html" target="_blank">Home</a></li>
+            <li><a id="news-link" href="news.html" target="_blank">News</a></li>
+            <li><a id="company-link" href="company.html" target="_blank">Unternehmen</a></li>
+            <li><a id="contact-link" href="contact.html" target="_blank">Kontakt</a></li>
+            <li><a id="tutorials-link" href="tutorials.html" target="_blank">Tutorials</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-container">
+
+        <section>
+            <article>
+                <h1>Canvas - Die HTML Leinwand</h1>
+                <p>...</p>
+
+                <section class="container">
+                    <article class="item">
+                        <h1>Quelltext</h1>
+                        <pre>
+&lt;canvas id="CanvasID" width="XYpx" height="XYpx">
+&lt;/canvas>
+
+&lt;script>
+ 
+        var e=document.getElementById("meinKreisCanvas");
+        var canv=e.getContext("2d");
+        canv.fillStyle= "darkblue";
+        canv.arc(150,250,150,0,2*Math.PI);
+        canv.fill();
+ 
+&lt;/script>
+
+
+&lt;button onclick="notifyMe();">Kreis zeichnen&lt;/button>
+                        </pre>
+                    </article>
+
+                    <article class="item">
+                        <section class="container">
+                            <article class="item">
+                                <div style="text-align: center">
+                                    <button onclick="kreis();">Kreis zeichnen</button>
+                                </div>
+                            </article>
+                            <article class="item">
+                                <div style="text-align: center">
+                                    <button onclick="rechteck();">Rechteck zeichnen</button>
+                                </div>
+                            </article>
+                            <article class="item">
+                                <div style="text-align: center">
+                                    <button onclick="pfade();">Pfade zeichnen</button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <canvas id="meinCanvas" width="516" height="500"></canvas>
+
+                        <script>
+                            function kreis() {
+                                var e = document.getElementById("meinCanvas");
+                                var canv = e.getContext("2d");
+                                canv.fillStyle = "white";
+                                canv.fillRect(0, 0, 516, 500);
+                                canv.fillStyle = "darkblue";
+                                canv.arc(258, 250, 150, 0, 2 * Math.PI);
+                                canv.fill();
+                            }
+
+                            function rechteck() {
+                                var e = document.getElementById("meinCanvas");
+                                var canv = e.getContext("2d");
+                                canv.fillStyle = "white";
+                                canv.fillRect(0, 0, 516, 500);
+                                canv.fillStyle = "darkblue";
+                                canv.fillRect(108, 100, 300, 300);
+                            }
+
+                            function pfade() {
+                                var e = document.getElementById("meinCanvas");
+                                var canv = e.getContext("2d");
+                                canv.fillStyle = "white";
+                                canv.fillRect(0, 0, 516, 500);
+                                canv.strokeStyle = "darkblue";
+                                canv.lineWidth = 10;
+                                canv.moveTo(200, 450);
+                                canv.bezierCurveTo(200, 450, 100, 350, 200, 250);
+                                //canv.bezierCurveTo(200, 250, 300, 150, 200, 50);
+                                canv.stroke();
+                            }
+                        </script>
+
+                    </article>
+                </section>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <a id="impressum-link" href="impressum.html" target="_blank">Impressum</a>
+    </footer>
+
+    <script type="text/javascript" src="resources/js/ajax.js"></script>
+</body>
+
+</html>

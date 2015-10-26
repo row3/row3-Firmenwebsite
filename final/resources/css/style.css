@@ -193,6 +193,7 @@ article.item {
 
 section > article > h1 {
     font-size: 2em;
+    margin: 0.3em 0 0.8em 0;
 }
 
 section > article > section > article > h1 {
