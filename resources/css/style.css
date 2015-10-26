@@ -35,6 +35,10 @@ nav ul li {
     transition: all 0.2s;
 }
 
+nav img {
+    margin-bottom: -22px;
+}
+
 nav > ul > li > a > .caret {
     border-top: 4px solid #aaa;
     border-right: 4px solid transparent;
