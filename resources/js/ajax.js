@@ -17,7 +17,8 @@ function setupLinks() {
     var links = document.querySelectorAll("a");
 
     for (var i = 0; i < links.length; i++) {
-        ajaxify_link(links[i])
+        if (links[i].id != "jump" && links[i].id != "jumpback")
+            ajaxify_link(links[i])
     }
 }
 
