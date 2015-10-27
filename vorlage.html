@@ -9,11 +9,12 @@
 </head>
 
 <body onresize="resize(pages[current])">
-    <nav>
+    <header id="top">
+        <a id="logo" href="index.html" target="_blank"><img src="resources/img/Logo2.png" /></a>
+        <div><a id="jump" href="#nav">Menu</a></div>
+    </header>
+    <nav id="nav" role="navigation">
         <ul>
-            <li>
-                <a href="index.html" target="_blank"><img src="resources/img/Logo2.png" height="56px" /></a>
-            </li>
             <li><a href="index.html" target="_blank">Home</a></li>
             <li><a href="news.html" target="_blank">News</a></li>
             <li>
@@ -42,9 +43,12 @@
                         <li><a href="standort.html" target="_blank">Standorte</a></li>
                     </ul>
                 </div>
-                <li><a href="contact.html" target="_blank">Kontakt</a></li>
+            </li>
+            <li><a href="contact.html" target="_blank">Kontakt</a></li>
+            <li id="back"><a id="jumpback" href="#top">Menu schließen</a></li>
         </ul>
     </nav>
+
     <main id="main-container">
 
         <!--Inhalt-->

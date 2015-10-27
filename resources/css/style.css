@@ -3,6 +3,7 @@
     padding: 0;
     border: 0;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    line-height: 140%;
 }
 
 body {
@@ -10,114 +11,197 @@ body {
     color: #444444;
 }
 
-nav {
+#top {
     background-color: #363636;
     color: #888;
-    display: block;
     width: 100%;
-    position: fixed;
+    text-align: right;
+}
+
+#top > div {
+    display: inline-block;
+}
+
+#top img {
+    position: absolute;
     top: 0;
-    z-index: 99;
+    left: 0;
+    /*    margin-bottom: -22px;*/
+    height: 40px;
+    padding: 8px 12px;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    list-style-type: none;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
-}
-
-nav img {
-    margin-bottom: -22px;
-}
-
-nav > ul > li > a > .caret {
-    border-top: 4px solid #aaa;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-    content: "";
-    display: inline-block;
-    height: 0;
-    width: 0;
-    vertical-align: middle;
-    -webkit-transition: color 0.1s linear;
-    -moz-transition: color 0.1s linear;
-    -o-transition: color 0.1s linear;
-    transition: color 0.1s linear;
-}
-
-nav > ul > li > a {
+#top > div > a {
     color: #aaa;
-    display: block;
     line-height: 56px;
     padding: 0 24px;
     text-decoration: none;
 }
 
-nav > ul > li:hover {
+#top > div:hover {
     background-color: rgb( 40, 44, 47);
 }
 
-nav > ul > li:hover > a {
+#top > div:hover > a {
     color: rgb( 255, 255, 255);
 }
 
-nav > ul > li:hover > a > .caret {
-    border-top-color: rgb( 255, 255, 255);
+nav {
+    background-color: #363636;
+    color: #888;
 }
 
-nav > ul > li > div {
-    background-color: rgb( 40, 44, 47);
-    border-top: 0;
-    border-radius: 0 0 4px 4px;
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-    display: none;
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-    width: 165px;
-    visibility: hidden;
-    z-index: 99;
-    -webkit-transiton: opacity 0.2s;
-    -moz-transition: opacity 0.2s;
-    -ms-transition: opacity 0.2s;
-    -o-transition: opacity 0.2s;
-    -transition: opacity 0.2s;
-}
-
-nav > ul > li:hover > div {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
-nav > ul > li > div ul > li {
-    display: block;
-    z-index: 99;
-}
-
-nav > ul > li > div ul > li > a {
-    color: #fff;
-    display: block;
-    padding: 12px 24px;
+nav li > a {
+    color: #aaa;
     text-decoration: none;
-    z-index: 99;
 }
 
-nav > ul > li > div ul > li:hover > a {
-    background-color: rgba( 255, 255, 255, 0.1);
+@media screen and (max-width: 45em) {
+    nav > ul > li > a#logo {
+        display: block;
+    }
+    #top {
+        display: inline-block;
+    }
+    #nav {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        visibility: hidden;
+    }
+    #nav:target {
+        visibility: visible;
+    }
+    #nav a {
+        border-bottom-width: 0;
+        overflow: hidden;
+        height: 0;
+        line-height: 0;
+        padding: 0 1em;
+    }
+    #nav:target a {
+        border-bottom-width: 1px;
+        line-height: 3em;
+        height: 3em;
+        margin-left: 20px;
+    }
+    nav > ul > li > a {
+        font-weight: bold;
+    }
+    nav > ul > li:hover {
+        background-color: rgb( 40, 44, 47);
+    }
+    nav > ul > li:hover > a {
+        color: rgb( 255, 255, 255);
+    }
+    nav > ul > li > div ul > li:hover {
+        background-color: rgb( 40, 44, 47);
+    }
+    nav > ul > li > div ul > li:hover > a {
+        color: rgb( 255, 255, 255);
+    }
+}
+
+@media screen and (min-width: 45em) {
+    nav {
+        background-color: #363636;
+        color: #888;
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+    }
+    nav ul {
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline-block;
+        list-style-type: none;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+    nav > ul > li > a > .caret {
+        border-top: 4px solid #aaa;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        content: "";
+        display: inline-block;
+        height: 0;
+        width: 0;
+        vertical-align: middle;
+        -webkit-transition: color 0.1s linear;
+        -moz-transition: color 0.1s linear;
+        -o-transition: color 0.1s linear;
+        transition: color 0.1s linear;
+    }
+    nav > ul > li > a {
+        color: #aaa;
+        display: block;
+        line-height: 56px;
+        padding: 0 24px;
+        text-decoration: none;
+    }
+    nav > ul > li:hover {
+        background-color: rgb( 40, 44, 47);
+    }
+    nav > ul > li:hover > a {
+        color: rgb( 255, 255, 255);
+    }
+    nav > ul > li:hover > a > .caret {
+        border-top-color: rgb( 255, 255, 255);
+    }
+    nav > ul > li > div {
+        background-color: rgb( 40, 44, 47);
+        border-top: 0;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+        display: none;
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        width: 165px;
+        visibility: hidden;
+        z-index: 99;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        -transition: opacity 0.2s;
+    }
+    nav > ul > li:hover > div {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav > ul > li > div ul > li {
+        display: block;
+        z-index: 99;
+    }
+    nav > ul > li > div ul > li > a {
+        color: #fff;
+        display: block;
+        padding: 12px 24px;
+        text-decoration: none;
+        z-index: 99;
+    }
+    nav > ul > li > div ul > li:hover > a {
+        background-color: rgba( 255, 255, 255, 0.1);
+    }
+    #back {
+        display: none;
+    }
 }
 
 main {
-    padding-top: 56px;
+    /*    padding-top: 56px;*/
+    z-index: 50;
 }
 
 #slideshow {
@@ -219,21 +303,12 @@ article {
 
 article.item {
     flex-grow: 1;
-    width: 300px;
+    width: 280px;
 }
-
-
-/*
-@media screen and (max-width: 768px) {
-    section.container {
-        flex-direction: column;
-    }
-}
-*/
 
 section > article > h1 {
     font-size: 2em;
-    margin: 0.3em 0 0.8em 0;
+    margin: 0.2em 0 0.6em 0;
 }
 
 section > article > h2 {
@@ -276,7 +351,9 @@ section > article > section > article > img {
 article > pre {
     color: white;
     background-color: black;
+    word-wrap: break-word;
     margin: 0.4em;
+    overflow: scroll;
 }
 
 section > article#impressum {
