@@ -357,11 +357,13 @@ article > pre {
 }
 
 section > article#impressum {
-    flex: 1;
+    min-width: 200px;
+    flex-grow: 1;
 }
 
 section > article#haftungsausschluss {
-    flex: 2;
+    min-width: 400px;
+    flex-grow: 2;
 }
 
 section > article > p.datum {

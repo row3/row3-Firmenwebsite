@@ -3,7 +3,7 @@ var current = 0;
 var slideshow;
 
 function resize(pic) {
-    if (document.location.pathname == "/index.html") {
+    if (document.location.pathname == "/index.html" || document.location.pathname == "/") {
         document.getElementById('slideshow').setAttribute("style", "height:" +
             pic.height + "px");
         document.getElementById('prev').setAttribute("style", "height:" +
@@ -15,7 +15,7 @@ function resize(pic) {
 
 function pageLoaded() {
     pages = document.querySelectorAll("#bilder img");
-    if (pages.length != 0 && document.location.pathname == "/index.html") {
+    if (pages.length != 0 && (document.location.pathname == "/index.html" || document.location.pathname == "/")) {
         displayImage(-1, 0);
         resize(pages[current]);
         play();
